@@ -1,0 +1,676 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff ;
+  color: #9e9ea4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+  color: #24B391;
+}
+
+.ssicon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+}
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+.icon, .icon_header {
+  margin-right: 5px;
+}
+
+.close_icon {
+  color: #3a9c84;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+}
+
+/* Header  */
+.header {
+  grid-area: header;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #DAE3E6;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+.header-right {
+  justify-content: space-between;
+}
+
+.menu-icon {
+  display: none;
+}
+/* End Header  */
+
+/* Sidebar  */
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #DAE3E6;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 0px 30px;
+  margin-bottom: 30px;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+  background-color: #c1f0e4;
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #9e9ea4;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+/* End Sidebar  */
+
+
+/* Main  */  
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.card:first-child {
+  background-color: #3a9c84;
+}
+
+.card:nth-child(2) {
+  background-color: #3a9c84;
+}
+
+.card:nth-child(3) {
+  background-color: #3a9c84;
+}
+
+.card:nth-child(4) {
+  background-color: #3a9c84;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .card_icon {
+  font-size: 25px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  height: 300px;
+}
+
+/* End Main  */
+
+
+/* Medium <= 992px */
+  
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+
+/*LOGIN PAGE CSS START*/
+/* Center the page */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Logo style outside the container */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+/* Login container with larger width and padding */
+.login-container {
+  width: 400px; /* Wider container */
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Input group for labels and inputs */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left; /* Align label to the left */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color:#333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #c7c7c7;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  background-color: #ddd;
+}
+
+/* Button styles */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #555;
+}
+
+/* Forgot password link */
+.forgot-password {
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+/*LOGIN PAGE CSS END*/
+
+/*Manage Payments */
+
+.manage-payments-container {
+  padding: 12px;
+  width: 100%s;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.payments-table {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.payments-table table {
+  width: 200%;
+  border-collapse: collapse;
+  table-layout:fixed;
+}
+
+.payments-table th, .payments-table td {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.payments-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.payments-table select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pay-button {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active-page {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Optional: Ensure the table is more responsive */
+@media (max-width: 768px) {
+  .payments-table table {
+    width: 100%;
+    table-layout: auto; /* Allows the table to adjust on smaller screens */
+  }
+
+  .payments-table th, .payments-table td {
+    width: auto;
+    padding: 8px;
+  }
+}
+
+/* Manage Payments end */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.profile-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px; /* Adjust depending on the icon size */
+  right: 0;
+  background-color: #c1f0e4;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 150px;
+  z-index: 10;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: #f1f1f1;
+}
+
+/* When dropdown is open */
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Add an arrow pointing upwards */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  border-width: 0 6px 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+
+/* Members starts */
+.add-member-page {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.add-member-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.add-member-form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register-button {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 10px 0;
+}
+
+.nav-item {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/*Members ends*/
+
+/*Record Payments */
+.record-payment-page {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.payment-form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/*Record Payments ends */
+
+/* Profile page */
+.profile-page {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.back-button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 32px;
+}
+
+.profile-details {
+  margin-top: 30px;
+}
+
+.profile-link {
+  display: block;
+  font-size: 18px;
+  color: black;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  background-color: #f1f1f1;
+}
+/* Profile ends */ 
